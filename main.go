@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/luhring/commitment/commits"
+	"github.com/luhring/commitment/commitment"
 	"github.com/urfave/cli"
 )
 
@@ -46,9 +46,9 @@ func main() {
 	app.Run(os.Args)
 }
 
-func getRepositoryFromPath(path string) commits.Repository {
+func getRepositoryFromPath(path string) commitment.Repository {
 	parts := strings.Split(path, "/")
-	return commits.Repository{
+	return commitment.Repository{
 		User:           parts[0],
 		RepositoryName: parts[1],
 	}
