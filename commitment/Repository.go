@@ -14,6 +14,7 @@ type Repository struct {
 }
 
 func (r *Repository) getURLForCommitsOnGitHub() string {
+	log.Print("https://api.github.com/repos/" + r.User + "/" + r.RepositoryName + "/commits")
 	return "https://api.github.com/repos/" + r.User + "/" + r.RepositoryName + "/commits"
 }
 
@@ -43,6 +44,7 @@ func (r *Repository) GetCommitReport(n int) CommitReport {
 	return CommitReport{
 		Message: selectedCommitItem.Commit.Message,
 		URL:     selectedCommitItem.Html_url,
+		Date:    selectedCommitItem.Commit.Committer.Date,
 	}
 }
 

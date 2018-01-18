@@ -22,10 +22,11 @@ func main() {
 			Action: func(c *cli.Context) {
 				repositoryPath := c.Args().Get(0)
 				repository := getRepositoryFromPath(repositoryPath)
-				commit := repository.GetCommitReport(0)
+				commitReport := repository.GetCommitReport(0)
 
-				fmt.Println("Commit message: ", commit.Message)
-				fmt.Println("View changes: ", commit.URL)
+				fmt.Println("Commit message: ", commitReport.Message)
+				fmt.Println("Commit date: ", commitReport.Date)
+				fmt.Println("View changes: ", commitReport.URL)
 			},
 		},
 		{
@@ -35,10 +36,11 @@ func main() {
 			Action: func(c *cli.Context) {
 				repositoryPath := c.Args().Get(0)
 				repository := getRepositoryFromPath(repositoryPath)
-				commit := repository.GetCommitReport(1)
+				commitReport := repository.GetCommitReport(1)
 
-				fmt.Println("Commit message: ", commit.Message)
-				fmt.Println("View changes: ", commit.URL)
+				fmt.Println("Commit message: ", commitReport.Message)
+				fmt.Println("Commit date: ", commitReport.Date)
+				fmt.Println("View changes: ", commitReport.URL)
 			},
 		},
 	}
