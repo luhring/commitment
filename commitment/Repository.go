@@ -14,7 +14,6 @@ type Repository struct {
 }
 
 func (r *Repository) getURLForCommitsOnGitHub() string {
-	log.Print("https://api.github.com/repos/" + r.User + "/" + r.RepositoryName + "/commits")
 	return "https://api.github.com/repos/" + r.User + "/" + r.RepositoryName + "/commits"
 }
 
