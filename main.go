@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"strings"
 
@@ -23,10 +22,7 @@ func main() {
 				repositoryPath := c.Args().Get(0)
 				repository := getRepositoryFromPath(repositoryPath)
 				commitReport := repository.GetCommitReport(0)
-
-				fmt.Println("Commit message: ", commitReport.Message)
-				fmt.Println("Commit date: ", commitReport.Date)
-				fmt.Println("View changes: ", commitReport.URL)
+				commitReport.Print()
 			},
 		},
 		{
@@ -37,10 +33,7 @@ func main() {
 				repositoryPath := c.Args().Get(0)
 				repository := getRepositoryFromPath(repositoryPath)
 				commitReport := repository.GetCommitReport(1)
-
-				fmt.Println("Commit message: ", commitReport.Message)
-				fmt.Println("Commit date: ", commitReport.Date)
-				fmt.Println("View changes: ", commitReport.URL)
+				commitReport.Print()
 			},
 		},
 	}
